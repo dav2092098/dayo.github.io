@@ -1,0 +1,59 @@
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+
+To install bindings via composer:
+composer require stripe/stripe-php
+
+To use the bindings, use Composer's autoload:
+require_once('vendor/autoload.php');
+require_once('/source-code/vendor/autoload.php');
+
+
+
+scroll percentage:
+https://stackoverflow.com/questions/2387136/cross-browser-method-to-determine-vertical-scroll-percentage-in-javascript#
+
+
+
+Git local setup:
+git config --local user.name "dayo9"
+git config --local user.email "dayodele@asu.edu"
+
+
+cd existing_folder
+git init
+git remote add origin https://gitlab.com/dayo9/dayo.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+
+(git add -u to stage only modified and deleted files)
+(git commit -a to commit only the modified and deleted files)
+
+git commit -m "Initial commit"
+git push -u origin master
+
+Existing Git repository: <---------- Multiple Git pushes---------- <
+cd existing_repo
+git remote rename origin old-origin
+git remote add origin https://gitlab.com/dayo9/dayo.git
+git push -u origin --all
+git push -u origin --tags
+
+
+pages file will be available as follows:
+https://aznow.gitlab.io/pac/aznowpac.html
+
+Setup Github on top of Gitlab:
+git remote rename origin gitlab
+git remote add origin https://github.com/dav2092098/dayo.github.io.git
+git remote rename origin github
+git push -u github master 
+
+go into .git dir > open config file and modify [remote "gitlab"] 
+to [remote "origin"] and modify "remote = github" to "remote = origin" 
+so default is gitlab
+
+(user: dav2092098)
