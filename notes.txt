@@ -43,6 +43,7 @@ git push -u origin --all
 git push -u origin --tags
 
 
+
 pages file will be available as follows:
 https://aznow.gitlab.io/pac/aznowpac.html
 
@@ -57,3 +58,38 @@ to [remote "origin"] and modify "remote = github" to "remote = origin"
 so default is gitlab
 
 (user: dav2092098)
+
+
+To deploy on gitlab pages:
+create .gitlab-ci.yml file in gitlab and paste the following:
+# This file is a template, and might need editing before it works on your project.
+# Full project: https://day9.gitlab.io/dayo/index.php
+pages:
+  stage: deploy
+  script:
+  - mkdir .public
+  - cp -r * .public
+  - mv .public public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
